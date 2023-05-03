@@ -3,6 +3,7 @@ const express = require("express");
 const connectDB = require("./db/connect");
 const cors = require("cors");
 const authRouter = require("./routes/auth");
+const gameSummaryRouter = require("./routes/gameSummary");
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/game-summary", gameSummaryRouter);
 
 const run = async () => {
   try {
